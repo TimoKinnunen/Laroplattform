@@ -186,9 +186,9 @@
     <Compile Include="LäroplanModels\Document.cs" />
     <Compile Include="LäroplanModels\DocumentType.cs" />
     <Compile Include="LäroplanModels\Module.cs" />
-    <Compile Include="Migrations\201611251252275_Init.cs" />
-    <Compile Include="Migrations\201611251252275_Init.Designer.cs">
-      <DependentUpon>201611251252275_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201611252201116_Init.cs" />
+    <Compile Include="Migrations\201611252201116_Init.Designer.cs">
+      <DependentUpon>201611252201116_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -307,8 +307,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611251252275_Init.resx">
-      <DependentUpon>201611251252275_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611252201116_Init.resx">
+      <DependentUpon>201611252201116_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

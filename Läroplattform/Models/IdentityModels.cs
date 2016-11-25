@@ -49,17 +49,17 @@ namespace Läroplattform.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Activity> Activities { get; set; }
+        public System.Data.Entity.DbSet<Activity> Activities { get; set; }
 
-        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.ActivityType> ActivityTypes { get; set; }
+        public System.Data.Entity.DbSet<ActivityType> ActivityTypes { get; set; }
 
-        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Module> Modules { get; set; }
+        public System.Data.Entity.DbSet<Module> Modules { get; set; }
 
-        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Course> Courses { get; set; }
+        public System.Data.Entity.DbSet<Course> Courses { get; set; }
 
-        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Document> Documents { get; set; }
+        public System.Data.Entity.DbSet<Document> Documents { get; set; }
 
-        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.DocumentType> DocumentTypes { get; set; }
+        public System.Data.Entity.DbSet<DocumentType> DocumentTypes { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
