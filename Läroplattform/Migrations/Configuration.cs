@@ -28,10 +28,10 @@ namespace Läroplattform.Migrations
 
             var lärareToInsert = new ApplicationUser
             {
-                FirstName = "Hen",
-                LastName = "Lärare",
-                UserName = "lärare@lexicon.se",
-                Email = "lärare@lexicon.se",
+                FirstName = "Stina",
+                LastName = "Larsson",
+                UserName = "stina.larsson@lexicon.se",
+                Email = "stina.larsson@lexicon.se",
                 EmailConfirmed = true
             };
 

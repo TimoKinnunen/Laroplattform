@@ -3,9 +3,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -14,9 +11,9 @@ namespace Läroplattform.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public int CourseId { get; set; }
-        [ForeignKey("CourseId")]
-        public virtual Course Course { get; set; }
+        //public int CourseId { get; set; }
+        //[ForeignKey("CourseId")]
+        //public virtual Course Course { get; set; }
 
         [Required]
         [Display(Name = "First name")]
@@ -51,6 +48,18 @@ namespace Läroplattform.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Activity> Activities { get; set; }
+
+        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.ActivityType> ActivityTypes { get; set; }
+
+        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Module> Modules { get; set; }
+
+        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Course> Courses { get; set; }
+
+        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.Document> Documents { get; set; }
+
+        public System.Data.Entity.DbSet<Läroplattform.LäroplanModeller.DocumentType> DocumentTypes { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

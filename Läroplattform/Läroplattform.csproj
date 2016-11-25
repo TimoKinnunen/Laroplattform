@@ -174,12 +174,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LäroplanModeller\Activity.cs" />
-    <Compile Include="LäroplanModeller\ActivityType.cs" />
-    <Compile Include="LäroplanModeller\Course.cs" />
-    <Compile Include="LäroplanModeller\Document.cs" />
-    <Compile Include="LäroplanModeller\DocumentType.cs" />
-    <Compile Include="LäroplanModeller\Module.cs" />
+    <Compile Include="LäroplanControllers\ActivitiesController.cs" />
+    <Compile Include="LäroplanControllers\ActivityTypesController.cs" />
+    <Compile Include="LäroplanControllers\CoursesController.cs" />
+    <Compile Include="LäroplanControllers\DocumentsController.cs" />
+    <Compile Include="LäroplanControllers\DocumentTypesController.cs" />
+    <Compile Include="LäroplanControllers\ModulesController.cs" />
+    <Compile Include="LäroplanModels\Activity.cs" />
+    <Compile Include="LäroplanModels\ActivityType.cs" />
+    <Compile Include="LäroplanModels\Course.cs" />
+    <Compile Include="LäroplanModels\Document.cs" />
+    <Compile Include="LäroplanModels\DocumentType.cs" />
+    <Compile Include="LäroplanModels\Module.cs" />
+    <Compile Include="Migrations\201611251252275_Init.cs" />
+    <Compile Include="Migrations\201611251252275_Init.Designer.cs">
+      <DependentUpon>201611251252275_Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -256,6 +266,36 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Activities\Create.cshtml" />
+    <Content Include="Views\Activities\Delete.cshtml" />
+    <Content Include="Views\Activities\Details.cshtml" />
+    <Content Include="Views\Activities\Edit.cshtml" />
+    <Content Include="Views\Activities\Index.cshtml" />
+    <Content Include="Views\ActivityTypes\Create.cshtml" />
+    <Content Include="Views\ActivityTypes\Delete.cshtml" />
+    <Content Include="Views\ActivityTypes\Details.cshtml" />
+    <Content Include="Views\ActivityTypes\Edit.cshtml" />
+    <Content Include="Views\ActivityTypes\Index.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Documents\Create.cshtml" />
+    <Content Include="Views\Documents\Delete.cshtml" />
+    <Content Include="Views\Documents\Details.cshtml" />
+    <Content Include="Views\Documents\Edit.cshtml" />
+    <Content Include="Views\Documents\Index.cshtml" />
+    <Content Include="Views\DocumentTypes\Create.cshtml" />
+    <Content Include="Views\DocumentTypes\Delete.cshtml" />
+    <Content Include="Views\DocumentTypes\Details.cshtml" />
+    <Content Include="Views\DocumentTypes\Edit.cshtml" />
+    <Content Include="Views\DocumentTypes\Index.cshtml" />
+    <Content Include="Views\Modules\Create.cshtml" />
+    <Content Include="Views\Modules\Delete.cshtml" />
+    <Content Include="Views\Modules\Details.cshtml" />
+    <Content Include="Views\Modules\Edit.cshtml" />
+    <Content Include="Views\Modules\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,6 +305,11 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611251252275_Init.resx">
+      <DependentUpon>201611251252275_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
