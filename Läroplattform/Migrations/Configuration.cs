@@ -39,6 +39,20 @@ namespace Läroplattform.Migrations
             {
                 var success = AddUserToRole(lärareToInsert.Id, "lärare");
             }
+
+            var elevToInsert = new ApplicationUser
+            {
+                FirstName = "Göran",
+                LastName = "Persson",
+                UserName = "goran.persson@lexicon.se",
+                Email = "goran.persson@lexicon.se",
+                EmailConfirmed = true
+            };
+
+            if (CreateUser(elevToInsert, "Lexicon01!"))
+            {
+                var success = AddUserToRole(elevToInsert.Id, "elev");
+            }
         }
 
         public bool RoleExists(string roleName)
