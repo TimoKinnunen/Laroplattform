@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Läroplattform.LäroplanModeller
+namespace Läroplattform.LäroplanModels
 {
     public class Module
     {

@@ -1,4 +1,4 @@
-﻿using Läroplattform.LäroplanModeller;
+﻿using Läroplattform.LäroplanModels;
 using Läroplattform.Models;
 using System.Data.Entity;
 using System.Linq;

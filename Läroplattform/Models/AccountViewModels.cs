@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Läroplattform.LäroplanModels;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Läroplattform.Models
@@ -64,6 +65,25 @@ namespace Läroplattform.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Portkod till klassrummet")]
+        public int ClassRoomDoorCode { get; set; }
+
+        [Required]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Full name")]
+        public string FullName { get { return FirstName + " " + LastName; } }
+
+        // navigation property
+        [Display(Name = "User documents")]
+        public virtual ICollection<Document> UserDocuments { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

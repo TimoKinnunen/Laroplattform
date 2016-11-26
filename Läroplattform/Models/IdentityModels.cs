@@ -1,4 +1,4 @@
-﻿using Läroplattform.LäroplanModeller;
+﻿using Läroplattform.LäroplanModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
@@ -11,16 +11,18 @@ namespace Läroplattform.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        //public int CourseId { get; set; }
-        //[ForeignKey("CourseId")]
-        //public virtual Course Course { get; set; }
+        [Required]
+        [Display(Name = "Portkod till klassrummet")]
+        public int ClassRoomDoorCode { get; set; }
 
         [Required]
         [Display(Name = "First name")]
         public string FirstName { get; set; }
+
         [Required]
         [Display(Name = "Last name")]
         public string LastName { get; set; }
+
         [Display(Name = "Full name")]
         public string FullName { get { return FirstName + " " + LastName; } }
 
@@ -49,6 +51,12 @@ namespace Läroplattform.Models
             return new ApplicationDbContext();
         }
 
+        // cascade delete is default behaviour, uncomment this code if you don't want cascade delete to happen
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        //}
+
         public System.Data.Entity.DbSet<Activity> Activities { get; set; }
 
         public System.Data.Entity.DbSet<ActivityType> ActivityTypes { get; set; }
@@ -60,10 +68,5 @@ namespace Läroplattform.Models
         public System.Data.Entity.DbSet<Document> Documents { get; set; }
 
         public System.Data.Entity.DbSet<DocumentType> DocumentTypes { get; set; }
-
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-        //}
     }
 }

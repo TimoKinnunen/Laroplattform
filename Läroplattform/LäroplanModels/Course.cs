@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Läroplattform.LäroplanModeller
+namespace Läroplattform.LäroplanModels
 {
     public class Course
     {
