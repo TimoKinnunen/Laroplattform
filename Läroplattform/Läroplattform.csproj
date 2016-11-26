@@ -180,12 +180,16 @@
     <Compile Include="LäroplanControllers\DocumentsController.cs" />
     <Compile Include="LäroplanControllers\DocumentTypesController.cs" />
     <Compile Include="LäroplanControllers\ModulesController.cs" />
+    <Compile Include="LäroplanControllers\TeacherSchemaController.cs" />
+    <Compile Include="LäroplanControllers\StudentSchemaController.cs" />
     <Compile Include="LäroplanModels\Activity.cs" />
     <Compile Include="LäroplanModels\ActivityType.cs" />
     <Compile Include="LäroplanModels\Course.cs" />
     <Compile Include="LäroplanModels\Document.cs" />
     <Compile Include="LäroplanModels\DocumentType.cs" />
     <Compile Include="LäroplanModels\Module.cs" />
+    <Compile Include="LäroplanViewModels\StudentSchema.cs" />
+    <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
     <Compile Include="Migrations\201611252201116_Init.cs" />
     <Compile Include="Migrations\201611252201116_Init.Designer.cs">
       <DependentUpon>201611252201116_Init.cs</DependentUpon>
@@ -304,6 +308,8 @@
     <Content Include="Views\Modules\Details.cshtml" />
     <Content Include="Views\Modules\Edit.cshtml" />
     <Content Include="Views\Modules\Index.cshtml" />
+    <Content Include="Views\StudentSchema\Index.cshtml" />
+    <Content Include="Views\TeacherSchema\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

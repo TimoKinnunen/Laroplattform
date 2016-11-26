@@ -10,7 +10,6 @@
     <ul class="nav navbar-nav navbar-right">
         <li>
             @{ 
-                //var currentUserId = User.Identity.GetUserId();
                 var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
                 var currentUser = userManager.FindById(User.Identity.GetUserId());
                 var fullName = currentUser.FullName;

@@ -68,5 +68,7 @@ namespace Läroplattform.Models
         public System.Data.Entity.DbSet<Document> Documents { get; set; }
 
         public System.Data.Entity.DbSet<DocumentType> DocumentTypes { get; set; }
+
+        //public System.Data.Entity.DbSet<Läroplattform.LäroplanViewModels.StudentSchema> StudentSchemas { get; set; }
     }
 }
