@@ -1,11 +1,10 @@
 namespace Läroplattform.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
+    using Helpers;
     using Models;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Läroplattform.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
@@ -16,14 +15,14 @@ namespace Läroplattform.Migrations
         {
             //  This method will be called after migrating to the latest version.
 
-            if (!RoleExists("lärare"))
+            if (!HelpRole.RoleExists("lärare"))
             {
-                var success = CreateRole("lärare");
+                var success = HelpRole.CreateRole("lärare");
             }
 
-            if (!RoleExists("elev"))
+            if (!HelpRole.RoleExists("elev"))
             {
-                var success = CreateRole("elev");
+                var success = HelpRole.CreateRole("elev");
             }
 
             var lärareToInsert = new ApplicationUser
@@ -35,9 +34,9 @@ namespace Läroplattform.Migrations
                 EmailConfirmed = true
             };
 
-            if (CreateUser(lärareToInsert, "Lexicon01!"))
+            if (HelpRole.CreateUser(lärareToInsert, "Lexicon01!"))
             {
-                var success = AddUserToRole(lärareToInsert.Id, "lärare");
+                var success = HelpRole.AddUserToRole(lärareToInsert.Id, "lärare");
             }
 
             var elevToInsert = new ApplicationUser
@@ -49,40 +48,12 @@ namespace Läroplattform.Migrations
                 EmailConfirmed = true
             };
 
-            if (CreateUser(elevToInsert, "Lexicon01!"))
+            if (HelpRole.CreateUser(elevToInsert, "Lexicon01!"))
             {
-                var success = AddUserToRole(elevToInsert.Id, "elev");
+                var success = HelpRole.AddUserToRole(elevToInsert.Id, "elev");
             }
         }
 
-        public bool RoleExists(string roleName)
-        {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
-            return roleManager.RoleExists(roleName);
-        }
-
-
-        public bool CreateRole(string roleName)
-        {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
-            var idResult = roleManager.Create(new IdentityRole(roleName));
-            return idResult.Succeeded;
-        }
-
-
-        public bool CreateUser(ApplicationUser applicationUser, string password)
-        {
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-            var idResult = userManager.Create(applicationUser, password);
-            return idResult.Succeeded;
-        }
-
-
-        public bool AddUserToRole(string applicationUserId, string roleName)
-        {
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-            var idResult = userManager.AddToRole(applicationUserId, roleName);
-            return idResult.Succeeded;
-        }
+       
     }
 }

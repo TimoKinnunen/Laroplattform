@@ -1,7 +1,6 @@
-﻿using Läroplattform.LäroplanViewModels;
+﻿using Läroplattform.Helpers;
+using Läroplattform.LäroplanViewModels;
 using Läroplattform.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web.Mvc;
 
 namespace Läroplattform.LäroplanControllers
@@ -15,12 +14,11 @@ namespace Läroplattform.LäroplanControllers
             ViewBag.CurrentUserMessage = string.Empty;
             if (User != null && User.IsInRole("elev"))
             {
-                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-                var currentUser = userManager.FindById(User.Identity.GetUserId());
+                var currentApplicationUser = HelpUser.GetCurrentApplicationUser(User);
 
-                var firstName = currentUser.FirstName;
-                var lastName = currentUser.LastName;
-                var email = currentUser.Email;
+                var firstName = currentApplicationUser.FirstName;
+                var lastName = currentApplicationUser.LastName;
+                var email = currentApplicationUser.Email;
 
                 TeacherSchema teacherSchema = new TeacherSchema
                 {
