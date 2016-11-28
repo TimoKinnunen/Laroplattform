@@ -66,10 +66,6 @@ namespace Läroplattform.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Portkod till klassrummet")]
-        public int ClassRoomDoorCode { get; set; }
-
-        [Required]
         [Display(Name = "First name")]
         public string FirstName { get; set; }
 
@@ -79,6 +75,15 @@ namespace Läroplattform.Models
 
         [Display(Name = "Full name")]
         public string FullName { get { return FirstName + " " + LastName; } }
+
+        [Display(Name = "Lärare")]
+        public bool IsInRoleTeacher { get; set; }
+
+        [Display(Name = "Elev")]
+        public bool IsInRoleStudent { get; set; }
+
+        [Display(Name = "Har slutat")]
+        public bool IsNotInAnyRole { get; set; }
 
         // navigation property
         [Display(Name = "User documents")]

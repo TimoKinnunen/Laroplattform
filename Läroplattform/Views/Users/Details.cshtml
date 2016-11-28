@@ -10,14 +10,6 @@
     <h4>ApplicationUser</h4>
     <hr />
     <dl class="dl-horizontal">
-        @*<dt>
-            @Html.DisplayNameFor(model => model.ClassRoomDoorCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClassRoomDoorCode)
-        </dd>*@
-
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -32,6 +24,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmPassword)
         </dd>
 
         <dt>
@@ -51,11 +59,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.IsNotAttachedToInstitution)
+            @Html.DisplayNameFor(model => model.IsNotInAnyRole)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IsNotAttachedToInstitution)
+            @Html.DisplayFor(model => model.IsNotInAnyRole)
         </dd>
 
         <dt>
@@ -66,7 +74,7 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        @*<dt>
+        <dt>
             @Html.DisplayNameFor(model => model.EmailConfirmed)
         </dt>
 
@@ -136,7 +144,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.AccessFailedCount)
-        </dd>*@
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.UserName)

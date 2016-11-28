@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Läroplattform.Helpers;
+using Läroplattform.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Läroplattform.Models;
 
 namespace Läroplattform.Controllers
 {
@@ -46,11 +43,45 @@ namespace Läroplattform.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ClassRoomDoorCode,FirstName,LastName,IsInRoleTeacher,IsInRoleStudent,IsNotAttachedToInstitution,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Password,ConfirmPassword,IsInRoleTeacher,IsInRoleStudent,IsNotInAnyRole,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(applicationUser);
+                //var dbUser = new User
+                //{
+                //    Firstname = model.FirstName,
+                //    Lastname = model.LastName,
+                //    Email = model.UserName
+                //};
+                //var appUser = new ApplicationUser(applicationUser.UserName);
+                //applicationUser.UserInfo = dbUser;
+                //try
+                //{
+                //    var result = await UserManager.CreateAsync(appUser, model.Password);
+                //}
+                //catch (Exception e)
+                //{
+                //    // show error or whatever
+                //}
+
+                var userToInsert = new ApplicationUser
+                {
+                    FirstName = applicationUser.FirstName,
+                    LastName = applicationUser.LastName,
+                    UserName = applicationUser.Email,
+                    Email = applicationUser.Email,
+                    IsInRoleStudent = true,
+                    EmailConfirmed = true,
+                    Password = applicationUser.Password
+                };
+
+                //if (HelpRole.CreateUser(userToInsert, "Lexicon01!"))
+                //{
+                //    var success = HelpRole.AddUserToRole(userToInsert.Id, "Elev");
+                //}
+
+                //db.Users.Add(applicationUser);
+                db.Users.Add(userToInsert);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -78,7 +109,7 @@ namespace Läroplattform.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ClassRoomDoorCode,FirstName,LastName,IsInRoleTeacher,IsInRoleStudent,IsNotAttachedToInstitution,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Password,ConfirmPassword,IsInRoleTeacher,IsInRoleStudent,IsNotInAnyRole,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {

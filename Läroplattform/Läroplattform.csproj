@@ -193,9 +193,17 @@
     <Compile Include="LäroplanModels\Module.cs" />
     <Compile Include="LäroplanViewModels\StudentSchema.cs" />
     <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
-    <Compile Include="Migrations\201611281531535_Init.cs" />
-    <Compile Include="Migrations\201611281531535_Init.Designer.cs">
-      <DependentUpon>201611281531535_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201611282112251_Init.cs" />
+    <Compile Include="Migrations\201611282112251_Init.Designer.cs">
+      <DependentUpon>201611282112251_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611282200141_Init1.cs" />
+    <Compile Include="Migrations\201611282200141_Init1.Designer.cs">
+      <DependentUpon>201611282200141_Init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611282240315_Init2.cs" />
+    <Compile Include="Migrations\201611282240315_Init2.Designer.cs">
+      <DependentUpon>201611282240315_Init2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,8 +329,14 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611281531535_Init.resx">
-      <DependentUpon>201611281531535_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611282112251_Init.resx">
+      <DependentUpon>201611282112251_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611282200141_Init1.resx">
+      <DependentUpon>201611282200141_Init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611282240315_Init2.resx">
+      <DependentUpon>201611282240315_Init2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
