@@ -15,14 +15,14 @@ namespace Läroplattform.Migrations
         {
             //  This method will be called after migrating to the latest version.
 
-            if (!HelpRole.RoleExists("lärare"))
+            if (!HelpRole.RoleExists("Lärare"))
             {
-                var success = HelpRole.CreateRole("lärare");
+                var success = HelpRole.CreateRole("Lärare");
             }
 
-            if (!HelpRole.RoleExists("elev"))
+            if (!HelpRole.RoleExists("Elev"))
             {
-                var success = HelpRole.CreateRole("elev");
+                var success = HelpRole.CreateRole("Elev");
             }
 
             var lärareToInsert = new ApplicationUser
@@ -36,7 +36,7 @@ namespace Läroplattform.Migrations
 
             if (HelpRole.CreateUser(lärareToInsert, "Lexicon01!"))
             {
-                var success = HelpRole.AddUserToRole(lärareToInsert.Id, "lärare");
+                var success = HelpRole.AddUserToRole(lärareToInsert.Id, "Lärare");
             }
 
             var elevToInsert = new ApplicationUser
@@ -50,7 +50,7 @@ namespace Läroplattform.Migrations
 
             if (HelpRole.CreateUser(elevToInsert, "Lexicon01!"))
             {
-                var success = HelpRole.AddUserToRole(elevToInsert.Id, "elev");
+                var success = HelpRole.AddUserToRole(elevToInsert.Id, "Elev");
             }
         }
 

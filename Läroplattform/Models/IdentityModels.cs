@@ -26,6 +26,15 @@ namespace Läroplattform.Models
         [Display(Name = "Full name")]
         public string FullName { get { return FirstName + " " + LastName; } }
 
+        [Display(Name = "Lärare")]
+        public bool IsInRoleTeacher { get; set; }
+
+        [Display(Name = "Elev")]
+        public bool IsInRoleStudent { get; set; }
+
+        [Display(Name = "Utanför lärosätet")]
+        public bool IsNotAttachedToInstitution { get; set; }
+
         // navigation property
         [Display(Name = "User documents")]
         public virtual ICollection<Document> UserDocuments { get; set; }
@@ -68,6 +77,10 @@ namespace Läroplattform.Models
         public System.Data.Entity.DbSet<Document> Documents { get; set; }
 
         public System.Data.Entity.DbSet<DocumentType> DocumentTypes { get; set; }
+
+        //public System.Data.Entity.DbSet<Läroplattform.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+        //public System.Data.Entity.DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         //public System.Data.Entity.DbSet<Läroplattform.LäroplanViewModels.StudentSchema> StudentSchemas { get; set; }
     }

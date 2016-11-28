@@ -12,7 +12,7 @@ namespace Läroplattform.LäroplanControllers
         public ActionResult Index()
         {
             ViewBag.CurrentUserMessage = string.Empty;
-            if (User.IsInRole("elev"))
+            if (User.IsInRole("Elev"))
             {
                 var currentApplicationUser = HelpUser.GetCurrentApplicationUser(User);
 
