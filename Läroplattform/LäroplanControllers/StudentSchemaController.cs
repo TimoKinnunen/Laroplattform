@@ -12,7 +12,7 @@ namespace Läroplattform.LäroplanControllers
         public ActionResult Index()
         {
             ViewBag.CurrentUserMessage = string.Empty;
-            if (User != null && User.IsInRole("elev"))
+            if (User.IsInRole("elev"))
             {
                 var currentApplicationUser = HelpUser.GetCurrentApplicationUser(User);
 
@@ -20,14 +20,14 @@ namespace Läroplattform.LäroplanControllers
                 var lastName = currentApplicationUser.LastName;
                 var email = currentApplicationUser.Email;
 
-                TeacherSchema teacherSchema = new TeacherSchema
+                StudentSchema studentSchema = new StudentSchema
                 {
                     FirstName = firstName,
                     LastName = lastName,
                     Email = email
                 };
 
-                ViewBag.CurrentUserMessage = teacherSchema.FullName + " " + email;
+                ViewBag.CurrentUserMessage = studentSchema.FullName + " " + email;
                 return View();
             }
             else
