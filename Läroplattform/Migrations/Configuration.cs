@@ -31,7 +31,6 @@ namespace Läroplattform.Migrations
                 LastName = "Larsson",
                 UserName = "stina.larsson@lexicon.se",
                 Email = "stina.larsson@lexicon.se",
-                IsInRoleTeacher = true,
                 EmailConfirmed = true
             };
 
@@ -46,7 +45,6 @@ namespace Läroplattform.Migrations
                 LastName = "Persson",
                 UserName = "goran.persson@lexicon.se",
                 Email = "goran.persson@lexicon.se",
-                IsInRoleStudent = true,
                 EmailConfirmed = true
             };
 

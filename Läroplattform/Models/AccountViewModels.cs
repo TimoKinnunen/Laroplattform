@@ -76,15 +76,6 @@ namespace Läroplattform.Models
         [Display(Name = "Full name")]
         public string FullName { get { return FirstName + " " + LastName; } }
 
-        [Display(Name = "Lärare")]
-        public bool IsInRoleTeacher { get; set; }
-
-        [Display(Name = "Elev")]
-        public bool IsInRoleStudent { get; set; }
-
-        [Display(Name = "Har slutat")]
-        public bool IsNotInAnyRole { get; set; }
-
         // navigation property
         [Display(Name = "User documents")]
         public virtual ICollection<Document> UserDocuments { get; set; }

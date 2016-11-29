@@ -22,25 +22,16 @@ namespace Läroplattform.Models
         [Display(Name = "Full name")]
         public string FullName { get { return FirstName + " " + LastName; } }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        //[Required]
+        //[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Password")]
+        //public string Password { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-
-        [Display(Name = "Lärare")]
-        public bool IsInRoleTeacher { get; set; }
-
-        [Display(Name = "Elev")]
-        public bool IsInRoleStudent { get; set; }
-
-        [Display(Name = "Har slutat")]
-        public bool IsNotInAnyRole { get; set; }
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //public string ConfirmPassword { get; set; }
 
         // navigation property
         [Display(Name = "User documents")]
@@ -85,14 +76,5 @@ namespace Läroplattform.Models
 
         public System.Data.Entity.DbSet<DocumentType> DocumentTypes { get; set; }
 
-        //public System.Data.Entity.DbSet<Läroplattform.Models.ApplicationUser> ApplicationUsers { get; set; }
-
-        //public System.Data.Entity.DbSet<Läroplattform.LäroplanViewModels.UserViewModel> UserViewModels { get; set; }
-
-        //public System.Data.Entity.DbSet<Läroplattform.Models.ApplicationUser> ApplicationUsers { get; set; }
-
-        //public System.Data.Entity.DbSet<ApplicationUser> ApplicationUsers { get; set; }
-
-        //public System.Data.Entity.DbSet<Läroplattform.LäroplanViewModels.StudentSchema> StudentSchemas { get; set; }
     }
 }
