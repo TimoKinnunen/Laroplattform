@@ -3,37 +3,62 @@
 }
 
 <div class="jumbotron">
-    <h1>Lexicon läroplattform</h1>
-    <p class="lead">Lexicon läroplattform hanterar registrerade lärare och elever och arbete som pågår.</p>
-    <p class="lead">Registrera dig som är elev nu om du vet portkoden till klassrummet.</p>
-    <p class="lead">Och du kan logga in och börja arbeta så fort läraren har godkännt dig som elev.</p>
-    <p><a href="@Url.Action("Index", "TeacherSchema")" class="btn btn-primary btn-lg">Lärarens schema &raquo;</a></p>
-    <p><a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg">Elevens schema &raquo;</a></p>
-    <h5>
+    <h1 style="text-align:center">Välkommen till Lexicon LMS</h1>
+    <br />
+    <p class="lead" style="text-align:center">Lexicon LMS är en läroplattform som förenklar och centraliserar kommunikationen mellan lärare, lärosäte och elev genom att samla schema, kursmaterial, övrig information, övningsuppgifter och inlämningar på ett och samma ställe.</p>
+    <br />
+    @*<p class="lead">Registrera dig som är elev nu om du vet portkoden till klassrummet.</p>
+    <p class="lead">Och du kan logga in och börja arbeta så fort läraren har godkännt dig som elev.</p>*@
+    @*<div class="row">*@
+        @*<div class="col-md-1 col-centered">*@
+            <p class="text-center"><a href="@Url.Action("Index", "TeacherSchema")" class="btn btn-primary btn-lg">Lärarens schema &raquo;</a></p>
+        @*</div>*@
+    @*</div>*@
+    @*<div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <p><a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg">Elevens schema &raquo;</a></p>
+        </div>
+    </div>*@
+    @*<div class="im-centered">
+        <div class="row">
+            <p><a href="@Url.Action("Index", "TeacherSchema")" class="btn btn-primary btn-lg">Lärarens schema &raquo;</a></p>*@
+            @*<p><a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg">Elevens schema &raquo;</a></p>*@
+        @*</div>
+    </div>*@
+    @*<p><a href="@Url.Action("Index", "TeacherSchema")" class="btn btn-primary btn-lg">Lärarens schema &raquo;</a></p>
+    <p><a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg col-centered">Elevens schema &raquo;</a></p>*@
+    @*<p>
+        <a href="@Url.Action("Index", "TeacherSchema")" class="btn btn-primary btn-lg">Lärarens schema &raquo;</a>
+        <a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg col-centered">Elevens schema &raquo;</a>
+    </p>*@
+    @*<h5>
         Information till Zohra, Thomas och Anders:<br />
         Lärare i rollen 'lärare': 'stina.larsson@lexicon.se', lösenord: 'Lexicon01!'.<br />
         Elev i rollen 'elev': 'goran.persson@lexicon.se', lösenord: 'Lexicon01!'.<br />
-    </h5>
+    </h5>*@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <h2>Börja arbeta</h2>
         <p>För att kunna registrera sig måste man känna till portkoden till klassrummet. Detta förhindrar utomstående att registrera sig.</p>
         <p>En registrerad användare blir godkänd av en lärare antingen som lärare eller elev och då först får tillgång till läroplattformen.</p>
-        <p>Registrering sköts av individen och inte av lärare. Lärarens tid frigörs från detta monotona arbetet.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
+        <p>Registrering sköts av individen och inte av lärare. Lärarens tid frigörs från detta monotona arbetet.</p>*@
+        @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        @*<p><a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg">Skapa konto &raquo;</a></p>
+    </div>*@
+    <div class="col-md-6">
         <h2>Lärare</h2>
         <p>Lärare ser sitt aktuella schema och kan agera utifrån schemat.</p>
         <p>Lärarna lägger upp kurser, moduler och aktiviteter och kan ge feedback på inlämnad uppgift.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+        <p><a href="@Url.Action("Index", "TeacherSchema")" class="btn btn-primary btn-lg">Logga in &raquo;</a></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Elev</h2>
         <p>Elev ser sitt aktuella schema och kan agera utifrån schemat.</p>
         <p>Elev lämnar in uppgifter som filer och kan läsa feedback på inlämnad uppgift.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+        <p><a href="@Url.Action("Index", "StudentSchema")" class="btn btn-primary btn-lg">Logga in &raquo;</a></p>
     </div>
 </div>
