@@ -182,7 +182,6 @@
     <Compile Include="LäroplanControllers\DocumentsController.cs" />
     <Compile Include="LäroplanControllers\DocumentTypesController.cs" />
     <Compile Include="LäroplanControllers\ModulesController.cs" />
-    <Compile Include="LäroplanControllers\UserManagementController.cs" />
     <Compile Include="LäroplanControllers\TeacherSchemaController.cs" />
     <Compile Include="LäroplanControllers\StudentSchemaController.cs" />
     <Compile Include="LäroplanModels\Activity.cs" />
@@ -193,18 +192,9 @@
     <Compile Include="LäroplanModels\Module.cs" />
     <Compile Include="LäroplanViewModels\StudentSchema.cs" />
     <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
-    <Compile Include="LäroplanViewModels\UserManagement.cs" />
-    <Compile Include="Migrations\201611252201116_Init.cs" />
-    <Compile Include="Migrations\201611252201116_Init.Designer.cs">
-      <DependentUpon>201611252201116_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611260921381_ClassRoomDoorCode.cs" />
-    <Compile Include="Migrations\201611260921381_ClassRoomDoorCode.Designer.cs">
-      <DependentUpon>201611260921381_ClassRoomDoorCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611260927128_Register.cs" />
-    <Compile Include="Migrations\201611260927128_Register.Designer.cs">
-      <DependentUpon>201611260927128_Register.cs</DependentUpon>
+    <Compile Include="Migrations\201611290758559_Init.cs" />
+    <Compile Include="Migrations\201611290758559_Init.Designer.cs">
+      <DependentUpon>201611290758559_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -314,7 +304,6 @@
     <Content Include="Views\Modules\Index.cshtml" />
     <Content Include="Views\StudentSchema\Index.cshtml" />
     <Content Include="Views\TeacherSchema\Index.cshtml" />
-    <Content Include="Views\UserManagement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -326,14 +315,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611252201116_Init.resx">
-      <DependentUpon>201611252201116_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611260921381_ClassRoomDoorCode.resx">
-      <DependentUpon>201611260921381_ClassRoomDoorCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611260927128_Register.resx">
-      <DependentUpon>201611260927128_Register.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611290758559_Init.resx">
+      <DependentUpon>201611290758559_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -66,10 +66,6 @@ namespace Läroplattform.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Portkod till klassrummet")]
-        public int ClassRoomDoorCode { get; set; }
-
-        [Required]
         [Display(Name = "First name")]
         public string FirstName { get; set; }
 
