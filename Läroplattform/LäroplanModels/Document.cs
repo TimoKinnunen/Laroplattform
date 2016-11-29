@@ -24,6 +24,7 @@ namespace Läroplattform.LäroplanModels
         public string Description { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)] //g Default date & time 10/12/2002 10:11 PM
         [Display(Name = "Document start date")]
         public DateTime StartDate { get; set; }
 

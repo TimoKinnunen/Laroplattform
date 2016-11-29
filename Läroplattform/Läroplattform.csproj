@@ -174,8 +174,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelpRole.cs" />
-    <Compile Include="Helpers\HelpUser.cs" />
     <Compile Include="LäroplanControllers\ActivitiesController.cs" />
     <Compile Include="LäroplanControllers\ActivityTypesController.cs" />
     <Compile Include="LäroplanControllers\CoursesController.cs" />
@@ -192,9 +190,9 @@
     <Compile Include="LäroplanModels\Module.cs" />
     <Compile Include="LäroplanViewModels\StudentSchema.cs" />
     <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
-    <Compile Include="Migrations\201611290758559_Init.cs" />
-    <Compile Include="Migrations\201611290758559_Init.Designer.cs">
-      <DependentUpon>201611290758559_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201611292124219_Init.cs" />
+    <Compile Include="Migrations\201611292124219_Init.Designer.cs">
+      <DependentUpon>201611292124219_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -307,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -315,8 +314,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611290758559_Init.resx">
-      <DependentUpon>201611290758559_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611292124219_Init.resx">
+      <DependentUpon>201611292124219_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

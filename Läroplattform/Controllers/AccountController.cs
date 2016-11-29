@@ -146,11 +146,6 @@ namespace Läroplattform.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            //if (model.ClassRoomDoorCode != 1111)
-            //{
-            //    ModelState.AddModelError("ClassRoomDoorCode", "ClassRoomDoorCode is not correct. Try again. Tips till Zohra, Thomas och Anders: ClassRoomDoorCode is 1111.");
-            //}
-
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
