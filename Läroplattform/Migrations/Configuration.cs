@@ -1,6 +1,7 @@
 namespace Läroplattform.Migrations
 {
     using LäroplanModels;
+    using LäroplanViewModels;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -93,7 +94,7 @@ namespace Läroplattform.Migrations
                 }
                 else
                 {
-                    throw new Exception("Error creating user 'stina.larsson@lexicon.se' in seed.");
+                    throw new Exception("Error creating user 'goran.persson@lexicon.se' in seed.");
                 }
             }
 
@@ -109,9 +110,16 @@ namespace Läroplattform.Migrations
 
             context.Courses.AddOrUpdate(
               p => p.Name,
-              new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1)}
+              new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
             );
 
-        }
+            context.RegisterUserViewModels.AddOrUpdate(
+              p => p.Email,
+              new RegisterUserViewModel { FirstName = "Stina", LastName = "Larsson", Email = "stina.larsson@lexicon.se" ,Password="Lexicon01!",ConfirmPassword="Lexicon01!"},
+              new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!", ConfirmPassword = "Lexicon01!" }
+            );
+
+       
+    }
     }
 }
