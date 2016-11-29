@@ -103,23 +103,29 @@ namespace Läroplattform.Migrations
               new ActivityType { Name = "E-learning" }
             );
 
+            context.SaveChanges();
+
             context.DocumentTypes.AddOrUpdate(
               p => p.Name,
               new DocumentType { Name = "Inlämningsuppgift" }
             );
+
+            context.SaveChanges();
 
             context.Courses.AddOrUpdate(
               p => p.Name,
               new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
             );
 
+            context.SaveChanges();
+
             context.RegisterUserViewModels.AddOrUpdate(
-              p => p.Email,
-              new RegisterUserViewModel { FirstName = "Stina", LastName = "Larsson", Email = "stina.larsson@lexicon.se" ,Password="Lexicon01!",ConfirmPassword="Lexicon01!"},
-              new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!", ConfirmPassword = "Lexicon01!" }
+              p => p.FirstName,
+              new RegisterUserViewModel { FirstName = "Stina", LastName = "Larsson", Email = "stina.larsson@lexicon.se", Password = "Lexicon01!" },
+              new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!" }
             );
 
-       
-    }
+            context.SaveChanges();
+        }
     }
 }
