@@ -60,8 +60,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -171,20 +169,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelpRole.cs" />
-    <Compile Include="Helpers\HelpUser.cs" />
     <Compile Include="LäroplanControllers\ActivitiesController.cs" />
     <Compile Include="LäroplanControllers\ActivityTypesController.cs" />
     <Compile Include="LäroplanControllers\CoursesController.cs" />
     <Compile Include="LäroplanControllers\DocumentsController.cs" />
     <Compile Include="LäroplanControllers\DocumentTypesController.cs" />
     <Compile Include="LäroplanControllers\ModulesController.cs" />
+    <Compile Include="LäroplanControllers\RegisterUserViewModelsController.cs" />
     <Compile Include="LäroplanControllers\TeacherSchemaController.cs" />
     <Compile Include="LäroplanControllers\StudentSchemaController.cs" />
     <Compile Include="LäroplanModels\Activity.cs" />
@@ -193,15 +189,12 @@
     <Compile Include="LäroplanModels\Document.cs" />
     <Compile Include="LäroplanModels\DocumentType.cs" />
     <Compile Include="LäroplanModels\Module.cs" />
+    <Compile Include="LäroplanViewModels\RegisterUserViewModel.cs" />
     <Compile Include="LäroplanViewModels\StudentSchema.cs" />
     <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
-    <Compile Include="Migrations\201611290853598_Init.cs" />
-    <Compile Include="Migrations\201611290853598_Init.Designer.cs">
-      <DependentUpon>201611290853598_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611291531026_Test.cs" />
-    <Compile Include="Migrations\201611291531026_Test.Designer.cs">
-      <DependentUpon>201611291531026_Test.cs</DependentUpon>
+    <Compile Include="Migrations\201611292351284_Init.cs" />
+    <Compile Include="Migrations\201611292351284_Init.Designer.cs">
+      <DependentUpon>201611292351284_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -311,14 +304,15 @@
     <Content Include="Views\Modules\Index.cshtml" />
     <Content Include="Views\StudentSchema\Index.cshtml" />
     <Content Include="Views\TeacherSchema\Index.cshtml" />
-    <Content Include="Views\ApplicationUsers\Create.cshtml" />
-    <Content Include="Views\ApplicationUsers\Delete.cshtml" />
-    <Content Include="Views\ApplicationUsers\Details.cshtml" />
-    <Content Include="Views\ApplicationUsers\Edit.cshtml" />
-    <Content Include="Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Create.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Delete.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Details.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Edit.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -327,15 +321,9 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611290853598_Init.resx">
-      <DependentUpon>201611290853598_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611292351284_Init.resx">
+      <DependentUpon>201611292351284_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611291531026_Test.resx">
-      <DependentUpon>201611291531026_Test.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

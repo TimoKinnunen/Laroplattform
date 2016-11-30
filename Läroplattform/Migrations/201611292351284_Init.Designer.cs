@@ -13,7 +13,7 @@ namespace Läroplattform.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201611290853598_Init"; }
+            get { return "201611290758559_Init"; }
         }
         
         string IMigrationMetadata.Source
