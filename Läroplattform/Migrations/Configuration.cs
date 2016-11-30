@@ -100,34 +100,34 @@ namespace Läroplattform.Migrations
             //    }
             //}
 
-            context.ActivityTypes.AddOrUpdate(
-              p => p.Name,
-              new ActivityType { Name = "E-learning" }
-            );
+            //context.ActivityTypes.AddOrUpdate(
+            //  p => p.Name,
+            //  new ActivityType { Name = "E-learning" }
+            //);
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            context.DocumentTypes.AddOrUpdate(
-              p => p.Name,
-              new DocumentType { Name = "Inlämningsuppgift" }
-            );
+            //context.DocumentTypes.AddOrUpdate(
+            //  p => p.Name,
+            //  new DocumentType { Name = "Inlämningsuppgift" }
+            //);
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            context.Courses.AddOrUpdate(
-              p => p.Name,
-              new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
-            );
+            //context.Courses.AddOrUpdate(
+            //  p => p.Name,
+            //  new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
+            //);
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            context.RegisterUserViewModels.AddOrUpdate(
-              p => p.FirstName,
-              new RegisterUserViewModel { FirstName = "Stina", LastName = "Larsson", Email = "stina.larsson@lexicon.se", Password = "Lexicon01!" },
-              new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!" }
-            );
+            //context.RegisterUserViewModels.AddOrUpdate(
+            //  p => p.FirstName,
+            //  new RegisterUserViewModel { FirstName = "Stina", LastName = "Larsson", Email = "stina.larsson@lexicon.se", Password = "Lexicon01!" },
+            //  new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!" }
+            //);
 
-            context.SaveChanges();
+            //context.SaveChanges();
         }
     }
 }
