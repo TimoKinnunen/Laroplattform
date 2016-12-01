@@ -33,5 +33,6 @@ namespace Läroplattform.LäroplanModels
         // navigation property
         [Display(Name = "Module documents")]
         public virtual ICollection<Document> ModuleDocuments { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
     }
 }

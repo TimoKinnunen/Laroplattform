@@ -25,20 +25,16 @@ namespace Läroplattform.Migrations
             //ApplicationUser applicationUser;
             //IdentityResult identityResult;
 
-            //if (!roleManager.RoleExists("Lärare"))
-            //{
+            //if (!roleManager.RoleExists("Lärare")) {
             //    identityResult = roleManager.Create(new IdentityRole(("Lärare")));
-            //    if (!identityResult.Succeeded)
-            //    {
+            //    if (!identityResult.Succeeded) {
             //        throw new Exception("Error creating role 'Lärare' in seed.");
             //    }
             //}
 
-            //if (!roleManager.RoleExists("Elev"))
-            //{
+            //if (!roleManager.RoleExists("Elev")) {
             //    identityResult = roleManager.Create(new IdentityRole(("Elev")));
-            //    if (!identityResult.Succeeded)
-            //    {
+            //    if (!identityResult.Succeeded) {
             //        throw new Exception("Error creating role 'Elev' in seed.");
             //    }
             //}
@@ -47,11 +43,9 @@ namespace Läroplattform.Migrations
             //var userManager = new UserManager<ApplicationUser>(userStore);
 
             //applicationUser = userManager.FindByEmail("stina.larsson@lexicon.se");
-            //if (applicationUser == null)
-            //{
+            //if (applicationUser == null) {
             //    ApplicationUser newApplicationUser =
-            //        new ApplicationUser
-            //        {
+            //        new ApplicationUser {
             //            FirstName = "Stina",
             //            LastName = "Larsson",
             //            UserName = "stina.larsson@lexicon.se",
@@ -59,26 +53,20 @@ namespace Läroplattform.Migrations
             //            TimeOfRegistration = DateTime.Now
             //        };
             //    identityResult = userManager.Create(newApplicationUser, "Lexicon01!");
-            //    if (identityResult.Succeeded)
-            //    {
+            //    if (identityResult.Succeeded) {
             //        identityResult = userManager.AddToRole(newApplicationUser.Id, "Lärare");
-            //        if (!identityResult.Succeeded)
-            //        {
+            //        if (!identityResult.Succeeded) {
             //            throw new Exception("Error adding user 'stina.larsson@lexicon.se' to role 'Lärare' in seed.");
             //        }
-            //    }
-            //    else
-            //    {
+            //    } else {
             //        throw new Exception("Error creating user 'stina.larsson@lexicon.se' in seed.");
             //    }
             //}
 
             //applicationUser = userManager.FindByEmail("goran.persson@lexicon.se");
-            //if (applicationUser == null)
-            //{
+            //if (applicationUser == null) {
             //    ApplicationUser newApplicationUser =
-            //        new ApplicationUser
-            //        {
+            //        new ApplicationUser {
             //            FirstName = "Göran",
             //            LastName = "Persson",
             //            UserName = "goran.persson@lexicon.se",
@@ -86,40 +74,36 @@ namespace Läroplattform.Migrations
             //            TimeOfRegistration = DateTime.Now
             //        };
             //    identityResult = userManager.Create(newApplicationUser, "Lexicon01!");
-            //    if (identityResult.Succeeded)
-            //    {
+            //    if (identityResult.Succeeded) {
             //        identityResult = userManager.AddToRole(newApplicationUser.Id, "Elev");
-            //        if (!identityResult.Succeeded)
-            //        {
+            //        if (!identityResult.Succeeded) {
             //            throw new Exception("Error adding user 'goran.persson@lexicon.se' to role 'Elev' in seed.");
             //        }
-            //    }
-            //    else
-            //    {
+            //    } else {
             //        throw new Exception("Error creating user 'goran.persson@lexicon.se' in seed.");
             //    }
             //}
 
-            //context.ActivityTypes.AddOrUpdate(
-            //  p => p.Name,
-            //  new ActivityType { Name = "E-learning" }
-            //);
+            context.ActivityTypes.AddOrUpdate(
+              p => p.Name,
+              new ActivityType { Name = "E-learning" }
+            );
 
-            //context.SaveChanges();
+            context.SaveChanges();
 
-            //context.DocumentTypes.AddOrUpdate(
-            //  p => p.Name,
-            //  new DocumentType { Name = "Inlämningsuppgift" }
-            //);
+            context.DocumentTypes.AddOrUpdate(
+              p => p.Name,
+              new DocumentType { Name = "Inlämningsuppgift" }
+            );
 
-            //context.SaveChanges();
+            context.SaveChanges();
 
-            //context.Courses.AddOrUpdate(
-            //  p => p.Name,
-            //  new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
-            //);
+            context.Courses.AddOrUpdate(
+              p => p.Name,
+              new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
+            );
 
-            //context.SaveChanges();
+            context.SaveChanges();
 
             //context.RegisterUserViewModels.AddOrUpdate(
             //  p => p.FirstName,
@@ -127,7 +111,7 @@ namespace Läroplattform.Migrations
             //  new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!" }
             //);
 
-            //context.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

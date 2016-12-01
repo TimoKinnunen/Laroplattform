@@ -7,13 +7,13 @@ namespace Läroplattform.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class newInit : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(newInit));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611301211102_Init"; }
+            get { return "201612011427591_newInit"; }
         }
         
         string IMigrationMetadata.Source

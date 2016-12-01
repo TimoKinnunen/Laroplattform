@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Läroplattform.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -24,5 +25,8 @@ namespace Läroplattform.LäroplanModels
         // navigation property
         [Display(Name = "Course documents")]
         public virtual ICollection<Document> CourseDocuments { get; set; }
+        public virtual ICollection<Module> Modules { get; set; }
+        public virtual ICollection<ApplicationUser> Users { get; set; }
+
     }
 }
