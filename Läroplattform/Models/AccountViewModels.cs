@@ -73,13 +73,6 @@ namespace Läroplattform.Models
         [Display(Name = "Last name")]
         public string LastName { get; set; }
 
-        [Display(Name = "Full name")]
-        public string FullName { get { return FirstName + " " + LastName; } }
-
-        // navigation property
-        [Display(Name = "User documents")]
-        public virtual ICollection<Document> UserDocuments { get; set; }
-
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

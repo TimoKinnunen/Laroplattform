@@ -1,6 +1,4 @@
-﻿using Läroplattform.Helpers;
-using Läroplattform.LäroplanViewModels;
-using Läroplattform.Models;
+﻿using Läroplattform.Models;
 using System.Web.Mvc;
 
 namespace Läroplattform.LäroplanControllers
@@ -14,20 +12,7 @@ namespace Läroplattform.LäroplanControllers
             ViewBag.CurrentUserMessage = string.Empty;
             if (User.IsInRole("Lärare"))
             {
-                var currentApplicationUser = HelpUser.GetCurrentApplicationUser(User);
-
-                var firstName = currentApplicationUser.FirstName;
-                var lastName = currentApplicationUser.LastName;
-                var email = currentApplicationUser.Email;
-
-                TeacherSchema teacherSchema = new TeacherSchema
-                {
-                    FirstName = firstName,
-                    LastName = lastName,
-                    Email = email
-                };
-
-                ViewBag.CurrentUserMessage = teacherSchema.FullName + " " + email;
+                ViewBag.CurrentUserMessage = "Lärare är inloggad.";
                 return View();
             }
             else

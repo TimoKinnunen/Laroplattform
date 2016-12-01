@@ -176,14 +176,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelpRole.cs" />
-    <Compile Include="Helpers\HelpUser.cs" />
     <Compile Include="LäroplanControllers\ActivitiesController.cs" />
     <Compile Include="LäroplanControllers\ActivityTypesController.cs" />
     <Compile Include="LäroplanControllers\CoursesController.cs" />
     <Compile Include="LäroplanControllers\DocumentsController.cs" />
     <Compile Include="LäroplanControllers\DocumentTypesController.cs" />
     <Compile Include="LäroplanControllers\ModulesController.cs" />
+    <Compile Include="LäroplanControllers\RegisterUserViewModelsController.cs" />
     <Compile Include="LäroplanControllers\TeacherSchemaController.cs" />
     <Compile Include="LäroplanControllers\StudentSchemaController.cs" />
     <Compile Include="LäroplanModels\Activity.cs" />
@@ -192,6 +191,7 @@
     <Compile Include="LäroplanModels\Document.cs" />
     <Compile Include="LäroplanModels\DocumentType.cs" />
     <Compile Include="LäroplanModels\Module.cs" />
+    <Compile Include="LäroplanViewModels\RegisterUserViewModel.cs" />
     <Compile Include="LäroplanViewModels\StudentSchema.cs" />
     <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
     <Compile Include="Migrations\201611291314191_Init.cs" />
@@ -308,9 +308,15 @@
     <Content Include="Views\Modules\Index.cshtml" />
     <Content Include="Views\StudentSchema\Index.cshtml" />
     <Content Include="Views\TeacherSchema\Index.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Create.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Delete.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Details.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Edit.cshtml" />
+    <Content Include="Views\RegisterUserViewModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
