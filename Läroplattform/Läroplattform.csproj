@@ -194,9 +194,9 @@
     <Compile Include="LäroplanViewModels\RegisterUserViewModel.cs" />
     <Compile Include="LäroplanViewModels\StudentSchema.cs" />
     <Compile Include="LäroplanViewModels\TeacherSchema.cs" />
-    <Compile Include="Migrations\201611291314191_Init.cs" />
-    <Compile Include="Migrations\201611291314191_Init.Designer.cs">
-      <DependentUpon>201611291314191_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201612011130561_Init.cs" />
+    <Compile Include="Migrations\201612011130561_Init.Designer.cs">
+      <DependentUpon>201612011130561_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -325,12 +325,12 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611291314191_Init.resx">
-      <DependentUpon>201611291314191_Init.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <EmbeddedResource Include="Migrations\201612011130561_Init.resx">
+      <DependentUpon>201612011130561_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

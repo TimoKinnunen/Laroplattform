@@ -9,125 +9,88 @@ namespace Läroplattform.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
-    {
-        public Configuration()
-        {
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext> {
+        public Configuration() {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ApplicationDbContext context)
-        {
+        protected override void Seed(ApplicationDbContext context) {
+            //  This method will be called after migrating to the latest version.
 
-            //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
-            //var roleManager = new RoleManager<IdentityRole>(roleStore);
+            if (!RoleExists("Lärare")) {
+                var success = CreateRole("Lärare");
+            }
 
-            //ApplicationUser applicationUser;
-            //IdentityResult identityResult;
+            if (!RoleExists("Elev")) {
+                var success = CreateRole("Elev");
+            }
 
-            //if (!roleManager.RoleExists("Lärare"))
-            //{
-            //    identityResult = roleManager.Create(new IdentityRole(("Lärare")));
-            //    if (!identityResult.Succeeded)
-            //    {
-            //        throw new Exception("Error creating role 'Lärare' in seed.");
-            //    }
+            var userToInsert = new ApplicationUser {
+                FirstName = "Alexander",
+                LastName = "Jonsson",
+                TimeOfRegistration = DateTime.Now,
+                UserName = "alexander.jonsson@gympass.se",
+                Email = "alexander.jonsson@gympass.se",
+                EmailConfirmed = true
+            };
+
+            if (CreateUser(userToInsert, "Lexicon01!")) {
+                var success = AddUserToRole(userToInsert.Id, "Elev");
+            }
+
+            var adminToInsert = new ApplicationUser {
+                FirstName = "Stina",
+                LastName = "Larsson",
+                TimeOfRegistration = DateTime.Now,
+                UserName = "stina.larsson@gympass.se",
+                Email = "stina.larsson@gympass.se",
+                EmailConfirmed = true
+            };
+
+            if (CreateUser(adminToInsert, "Lexicon01!")) {
+                var success = AddUserToRole(adminToInsert.Id, "Lärare");
+            }
+
+            //Random random = new Random();
+
+            //for (int i = 0; i < 10; i++) {
+            //    context.GymClasses.AddOrUpdate(
+            //        g => g.ClassName,
+            //        new GymClass {
+            //            ClassName = "Spinning" + i.ToString(),
+            //            StartTime = DateTime.Now,
+            //            Duration = TimeSpan.FromMinutes(Math.Max(3, random.Next(60))),
+            //            Description = "Up " + i.ToString() + "and down along with music."
+            //        });
             //}
 
-            //if (!roleManager.RoleExists("Elev"))
-            //{
-            //    identityResult = roleManager.Create(new IdentityRole(("Elev")));
-            //    if (!identityResult.Succeeded)
-            //    {
-            //        throw new Exception("Error creating role 'Elev' in seed.");
-            //    }
-            //}
-
-            //var userStore = new UserStore<ApplicationUser>(new ApplicationDbContext());
-            //var userManager = new UserManager<ApplicationUser>(userStore);
-
-            //applicationUser = userManager.FindByEmail("stina.larsson@lexicon.se");
-            //if (applicationUser == null)
-            //{
-            //    ApplicationUser newApplicationUser =
-            //        new ApplicationUser
-            //        {
-            //            FirstName = "Stina",
-            //            LastName = "Larsson",
-            //            UserName = "stina.larsson@lexicon.se",
-            //            Email = "stina.larsson@lexicon.se",
-            //            TimeOfRegistration = DateTime.Now
-            //        };
-            //    identityResult = userManager.Create(newApplicationUser, "Lexicon01!");
-            //    if (identityResult.Succeeded)
-            //    {
-            //        identityResult = userManager.AddToRole(newApplicationUser.Id, "Lärare");
-            //        if (!identityResult.Succeeded)
-            //        {
-            //            throw new Exception("Error adding user 'stina.larsson@lexicon.se' to role 'Lärare' in seed.");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        throw new Exception("Error creating user 'stina.larsson@lexicon.se' in seed.");
-            //    }
-            //}
-
-            //applicationUser = userManager.FindByEmail("goran.persson@lexicon.se");
-            //if (applicationUser == null)
-            //{
-            //    ApplicationUser newApplicationUser =
-            //        new ApplicationUser
-            //        {
-            //            FirstName = "Göran",
-            //            LastName = "Persson",
-            //            UserName = "goran.persson@lexicon.se",
-            //            Email = "goran.persson@lexicon.se",
-            //            TimeOfRegistration = DateTime.Now
-            //        };
-            //    identityResult = userManager.Create(newApplicationUser, "Lexicon01!");
-            //    if (identityResult.Succeeded)
-            //    {
-            //        identityResult = userManager.AddToRole(newApplicationUser.Id, "Elev");
-            //        if (!identityResult.Succeeded)
-            //        {
-            //            throw new Exception("Error adding user 'goran.persson@lexicon.se' to role 'Elev' in seed.");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        throw new Exception("Error creating user 'goran.persson@lexicon.se' in seed.");
-            //    }
-            //}
-
-            //context.ActivityTypes.AddOrUpdate(
-            //  p => p.Name,
-            //  new ActivityType { Name = "E-learning" }
-            //);
-
             //context.SaveChanges();
+        }
 
-            //context.DocumentTypes.AddOrUpdate(
-            //  p => p.Name,
-            //  new DocumentType { Name = "Inlämningsuppgift" }
-            //);
+        public bool RoleExists(string roleName) {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+            return roleManager.RoleExists(roleName);
+        }
 
-            //context.SaveChanges();
 
-            //context.Courses.AddOrUpdate(
-            //  p => p.Name,
-            //  new Course { Name = "Systemutveckling .net", Description = "C#, JavaScript, Bootstrap, CSS, Html, MVC, Entity Framework", StartDate = DateTime.Now.AddMonths(-1) }
-            //);
+        public bool CreateRole(string roleName) {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+            var idResult = roleManager.Create(new IdentityRole(roleName));
+            return idResult.Succeeded;
+        }
 
-            //context.SaveChanges();
 
-            //context.RegisterUserViewModels.AddOrUpdate(
-            //  p => p.FirstName,
-            //  new RegisterUserViewModel { FirstName = "Stina", LastName = "Larsson", Email = "stina.larsson@lexicon.se", Password = "Lexicon01!" },
-            //  new RegisterUserViewModel { FirstName = "Göran", LastName = "Persson", Email = "goran.persson@lexicon.se", Password = "Lexicon01!" }
-            //);
+        public bool CreateUser(ApplicationUser applicationUser, string password) {
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var idResult = userManager.Create(applicationUser, password);
+            return idResult.Succeeded;
+        }
 
-            //context.SaveChanges();
+
+        public bool AddUserToRole(string applicationUserId, string roleName) {
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var idResult = userManager.AddToRole(applicationUserId, roleName);
+            return idResult.Succeeded;
         }
     }
 }
