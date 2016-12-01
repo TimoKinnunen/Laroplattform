@@ -38,4 +38,5 @@ namespace Läroplattform.LäroplanModels
         [Display(Name = "Activity documents")]
         public virtual ICollection<Document> ActivityDocuments { get; set; }
     }
+
 }
